@@ -26,7 +26,7 @@ $xpath =new DOMXpath($dom);
     </head>
     <body>
 <?php
-        $result= $xpath->query("//div[@class='alert alert-success']/strong")->item(0)->nodeValue;
+       $result= $xpath->query("//div[@role='alert']/strong")->item(0)->nodeValue;
         echo $result;
         /*
 
@@ -40,7 +40,7 @@ $xpath =new DOMXpath($dom);
 			$result = $xpath->query('//*[@id="currency_converter_result"]/span')->item(0)->nodeValue;
 
 			return str_replace(' '.$to_Currency, '', $result);
-}
+}Pp
 
         */
 ?>
