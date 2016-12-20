@@ -28,7 +28,22 @@ $xpath =new DOMXpath($dom);
 <?php
         $result= $xpath->query("//div[@class='alert alert-success']/strong")->item(0)->nodeValue;
         echo $result;
+        /*
+
+		function currency($from_Currency, $to_Currency, $amount) {
+			$content = file_get_contents('https://www.google.com/finance/converter?a='.$amount.'&from='.$from_Currency.'&to='.$to_Currency);
+
+			$doc = new DOMDocument;
+			@$doc->loadHTML($content);
+			$xpath = new DOMXpath($doc);
+
+			$result = $xpath->query('//*[@id="currency_converter_result"]/span')->item(0)->nodeValue;
+
+			return str_replace(' '.$to_Currency, '', $result);
+}
+
+        */
 ?>
     </body>
 </html>
-sublime edit 3
+
