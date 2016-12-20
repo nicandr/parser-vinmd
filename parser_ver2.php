@@ -17,6 +17,7 @@ $response = curl_exec($ch);
 curl_close($ch);
 $dom = new DOMDocument();
 $dom->loadHTML($response);
+$xpath =new DOMXpath($dom);
 ?>
 <!DOCTYPE html>
 <html>
@@ -25,16 +26,8 @@ $dom->loadHTML($response);
     </head>
     <body>
 <?php
-        foreach($dom->getElementsByTagName('strong') as $link) 
-        {
-            # Show the content
-            $link1 = $link->textContent;
-            if($link->textContent)
-            {
-                echo $link->textContent;
-                exit();
-             }
-        }
+        $result= $xpath->query("//div[@class='alert alert-success']/strong")->item(0)->nodeValue;
+        echo $result;
 ?>
     </body>
 </html>
