@@ -1,0 +1,5 @@
+<<<<<<< HEAD
+test 3
+=======
+test 1
+>>>>>>> parent of 82572e0... test 2
